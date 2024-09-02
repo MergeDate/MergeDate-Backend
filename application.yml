@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/MergeDate
+    username: root
+    password: john2469
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+    packagesToScan: cnsa.mergedate # api-docs 의 스캔 범위를 지정
+    path: /v3/api-docs # api 문서 확인 경로, localhost:8080/v3/api-docs 로 접근
+
+  default-consumes-media-type: application/json # 기본으로 설정되는 미디어타입 지정
+  auto-tag-classes: true # 오토 태그 기능 활성화
+  groups:
+    enabled: false # api 그룹 기능, default는 true 이나 당장 사용하지 않기에 false 로 지정
+
+  swagger-ui:
+    operationsSorter: method
+    path: /swagger-ui.html
