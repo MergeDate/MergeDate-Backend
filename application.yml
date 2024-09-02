@@ -1,9 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/MergeDate
-    username: root
-    password: john2469
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: dev
 
 springdoc:
   api-docs:

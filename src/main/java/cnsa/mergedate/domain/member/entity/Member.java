@@ -23,5 +23,5 @@ public class Member extends BaseTimeEntity {
 
     private String password;
 
-    private List<LocalDate> selectedDate = new ArrayList<>();
+    private List<LocalDate> selectedDates = new ArrayList<>();
 }
