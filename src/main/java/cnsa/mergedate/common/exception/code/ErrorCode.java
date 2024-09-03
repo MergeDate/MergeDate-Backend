@@ -13,7 +13,7 @@ public enum ErrorCode {
 
     // Member
     MEMBER_NOT_FOUND("멤버를 찾을 수 없습니다"),
-
+    EVENT_NOT_FOUND("이벤트를 찾을 수 없습니다"),
     ;
 
     private final String message;

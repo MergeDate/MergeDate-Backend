@@ -1,7 +1,6 @@
 package cnsa.mergedate.domain.member.entity;
 
 import cnsa.mergedate.common.entity.BaseTimeEntity;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -23,5 +22,5 @@ public class Member extends BaseTimeEntity {
 
     private String password;
 
-    private List<LocalDate> selectedDates = new ArrayList<>();
+    private List<MemberEvent> memberEvents = new ArrayList<>();
 }

@@ -2,6 +2,7 @@ package cnsa.mergedate.domain.member.controller;
 
 import cnsa.mergedate.common.response.ResponseBody;
 import cnsa.mergedate.common.security.PrincipalDetails;
+import cnsa.mergedate.domain.member.dto.request.MemberDeleteRequest;
 import cnsa.mergedate.domain.member.dto.request.MemberUpdateRequest;
 import cnsa.mergedate.domain.member.dto.response.MemberNicknameDuplResponse;
 import cnsa.mergedate.domain.member.dto.response.MemberResponse;
@@ -34,15 +35,21 @@ public class MemberController {
     }
 
     @PostMapping("/update")
-    public ResponseBody<MemberResponse> updateProfile(
+    public ResponseBody<Void> updateEvent(
         @AuthenticationPrincipal PrincipalDetails principalDetails,
-        @RequestPart MemberUpdateRequest profileUpdateRequest
+        @RequestPart MemberUpdateRequest memberUpdateRequest
     ) {
-        return ResponseBody.ok(
-            memberService.updateProfile(
-                principalDetails.memberId(), profileUpdateRequest
-            )
-        );
+        memberService.updateEvent(principalDetails.memberId(), memberUpdateRequest);
+        return ResponseBody.ok();
+    }
+
+    @PostMapping("/delete")
+    public ResponseBody<Void> deleteEvent(
+        @AuthenticationPrincipal PrincipalDetails principalDetails,
+        @RequestPart MemberDeleteRequest memberDeleteRequest
+    ) {
+        memberService.deleteEvent(principalDetails.memberId(), memberDeleteRequest);
+        return ResponseBody.ok();
     }
 
     @GetMapping("/duplication-check")
